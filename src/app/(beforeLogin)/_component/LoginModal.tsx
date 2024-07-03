@@ -1,17 +1,21 @@
 'use client';
 
 import styles from '@/app/(beforeLogin)/_component/login.module.css';
+import { useRouter } from 'next/navigation';
 
-import { useState } from 'react';
+import { ChangeEventHandler, useState } from 'react';
 
 export default function LoginModal() {
   const [id, setId] = useState();
   const [password, setPassword] = useState();
   const [message, setMessage] = useState();
 
-  const onSubmit = () => {};
+  const router = useRouter();
+  const onClickClose = () => {
+    router.back();
+  };
 
-  const onClickClose = () => {};
+  const onSubmit = () => {};
 
   const onChangeId = () => {};
 
@@ -21,7 +25,7 @@ export default function LoginModal() {
     <div className={styles.modalBackground}>
       <div className={styles.modal}>
         <div className={styles.modalHeader}>
-          <button className={styles.closeButton}>
+          <button className={styles.closeButton} onClick={onClickClose}>
             <svg
               width={24}
               viewBox="0 0 24 24"

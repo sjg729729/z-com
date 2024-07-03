@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Main() {
   return (
-    <div className={styles.container}>
+    <>
       <div className={styles.left}>
         <Image src={zLogo} alt="logo" />
       </div>
@@ -20,6 +20,6 @@ export default function Main() {
           로그인
         </Link>
       </div>
-    </div>
+    </>
   );
 }
